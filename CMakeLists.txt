@@ -10,6 +10,6 @@ project(TestBoost)
 
 add_executable(foo foo.cpp)
 
-hunter_add_package(Boost)
-find_package(Boost CONFIG REQUIRED)
-target_link_libraries(foo PUBLIC Boost::boost)
+hunter_add_package(Boost COMPONENTS system)
+find_package(Boost CONFIG REQUIRED COMPONENTS system)
+target_link_libraries(foo PUBLIC Boost::system)
